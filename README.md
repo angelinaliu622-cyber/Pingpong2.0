@@ -2,6 +2,13 @@
 
 This repository contains **TWO** exciting Ping Pong game implementations!
 
+## 🌐 Play Online
+
+**Live Demo:** [https://angelinaliu622-cyber.github.io/Pingpong2.0/](https://angelinaliu622-cyber.github.io/Pingpong2.0/)
+
+- **3D Version:** [https://angelinaliu622-cyber.github.io/Pingpong2.0/index.html](https://angelinaliu622-cyber.github.io/Pingpong2.0/index.html)
+- **Circus Version:** [https://angelinaliu622-cyber.github.io/Pingpong2.0/index-circus.html](https://angelinaliu622-cyber.github.io/Pingpong2.0/index-circus.html)
+
 ## 🎮 Game Versions
 
 ### 1️⃣ First-Person 3D Ping Pong (`index.html`)
