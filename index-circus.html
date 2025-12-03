@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎪 Clown Pong 2.0 - Circus Edition 🎪</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Decorative balloons and confetti -->
+    <div class="confetti-container">
+        <div class="balloon balloon-red"></div>
+        <div class="balloon balloon-yellow"></div>
+        <div class="balloon balloon-blue"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+    </div>
+
+    <!-- Main game container -->
+    <div class="game-container">
+        <!-- Circus banner -->
+        <div class="circus-banner">
+            <h1>🎪 CLOWN PONG 2.0 🎪</h1>
+        </div>
+
+        <!-- Scoreboard -->
+        <div class="scoreboard">
+            <div class="score-panel">
+                <div class="score-label">YOU</div>
+                <div class="score-value" id="playerScore">0</div>
+            </div>
+            <div class="score-divider">VS</div>
+            <div class="score-panel">
+                <div class="score-label">CLOWN</div>
+                <div class="score-value" id="aiScore">0</div>
+            </div>
+        </div>
+
+        <!-- Game table with canvas -->
+        <div class="table-container">
+            <div class="table-stripe left-stripe"></div>
+            <div class="table-stripe right-stripe"></div>
+            <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <!-- Game info and controls -->
+        <div class="game-info">
+            <div class="game-message" id="gameMessage">Press SPACE to Start!</div>
+            <div class="controls-info">
+                🎮 Move with Mouse or Arrow Keys | SPACE to Start
+            </div>
+            <button class="restart-btn" id="restartBtn" style="display: none;">🎪 Play Again 🎪</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
