@@ -61,7 +61,7 @@ const aiPaddle = {
     color: '#9b59b6',
     handleColor: '#8b4513',
     handleLength: 50,
-    speed: 4,
+    speed: 7,  // Increased for faster ball response
     reactionDelay: 0
 };
 
@@ -138,11 +138,11 @@ function serveBall() {
     ball.y = playerPaddle.y - 30;
     ball.z = 20;
 
-    // Realistic serve velocity (3-4 px/frame horizontal, 2-3 px/frame vertical)
-    const angle = (Math.random() - 0.5) * 0.3;
-    ball.speedX = 3 + Math.random();  // 3-4 px/frame
-    ball.speedY = -(2 + Math.random()); // -2 to -3 px/frame
-    ball.speedZ = 1.5;
+    // Realistic ping pong serve velocity (faster, more competitive)
+    const angle = (Math.random() - 0.5) * 0.4;
+    ball.speedX = 5 + Math.random() * 2;  // 5-7 px/frame
+    ball.speedY = -(4 + Math.random() * 2); // -4 to -6 px/frame
+    ball.speedZ = 2;
 
     playServeSound();
 }
@@ -388,25 +388,25 @@ function checkPaddleCollision(paddle, isPlayer) {
         const hitAI = !isPlayer && ball.speedY < 0;
 
         if (hitPlayer || hitAI) {
-            // Calculate bounce angle based on hit position (more gentle)
+            // Calculate bounce angle based on hit position
             const hitAngle = (ball.x - paddle.x) / paddle.radius;
 
-            // Set more realistic paddle hit velocities
-            ball.speedX = hitAngle * 3;  // Reduced from 6 to 3
-            ball.speedY *= -1;  // Simple reversal, no multiplication
-            ball.speedZ = 2 + Math.abs(hitAngle);  // Reduced upward bounce
+            // Set realistic competitive ping pong velocities
+            ball.speedX = hitAngle * 5;  // Faster horizontal response
+            ball.speedY *= -1.1;  // Add 10% force to return
+            ball.speedZ = 2.5 + Math.abs(hitAngle) * 0.5;  // Higher bounce
 
             // Add minimal randomness for natural variation
-            ball.speedX += (Math.random() - 0.5) * 0.5;
-            ball.speedY += (Math.random() - 0.5) * 0.3;
+            ball.speedX += (Math.random() - 0.5) * 0.8;
+            ball.speedY += (Math.random() - 0.5) * 0.5;
 
-            // Slight acceleration after long rallies (5% increase)
-            const speedMultiplier = 1.05;
+            // Acceleration after rallies (8% increase for faster pace)
+            const speedMultiplier = 1.08;
             ball.speedX *= speedMultiplier;
             ball.speedY *= speedMultiplier;
 
-            // Cap velocity at 8 px/frame in any direction
-            const maxSpeed = 8;
+            // Cap velocity at 15 px/frame for realistic fast ping pong
+            const maxSpeed = 15;
             if (Math.abs(ball.speedX) > maxSpeed) {
                 ball.speedX = Math.sign(ball.speedX) * maxSpeed;
             }
