@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clown Pong 2.0 - Circus Playground Edition</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background confetti and balloons -->
+    <div class="confetti-container">
+        <div class="balloon balloon-red"></div>
+        <div class="balloon balloon-yellow"></div>
+        <div class="balloon balloon-blue"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+    </div>
+
+    <!-- Main game container -->
+    <div class="game-container">
+        <!-- Header with circus banner -->
+        <div class="circus-banner">
+            <h1>🎪 CLOWN PONG CIRCUS 🎪</h1>
+        </div>
+
+        <!-- Scoreboard -->
+        <div class="scoreboard">
+            <div class="score-panel player-score-panel">
+                <div class="score-label">YOU</div>
+                <div class="score-value" id="playerScore">0</div>
+            </div>
+            <div class="score-divider">:</div>
+            <div class="score-panel ai-score-panel">
+                <div class="score-label">CLOWN</div>
+                <div class="score-value" id="aiScore">0</div>
+            </div>
+        </div>
+
+        <!-- 3D Table View -->
+        <div class="table-container">
+            <canvas id="gameCanvas"></canvas>
+
+            <!-- Decorative elements -->
+            <div class="table-stripe left-stripe"></div>
+            <div class="table-stripe right-stripe"></div>
+        </div>
+
+        <!-- Game controls and messages -->
+        <div class="game-info">
+            <div id="gameMessage" class="game-message">Press SPACE to Start!</div>
+            <div class="controls-info">
+                <span>🎮 Use ARROW KEYS ◄ ► or MOUSE to move</span>
+            </div>
+        </div>
+
+        <!-- Restart button (hidden initially) -->
+        <button id="restartBtn" class="restart-btn" style="display: none;">
+            🎪 PLAY AGAIN 🎪
+        </button>
+    </div>
+
+    <!-- Audio elements for sound effects -->
+    <audio id="paddleHitSound" preload="auto"></audio>
+    <audio id="wallHitSound" preload="auto"></audio>
+    <audio id="scoreSound" preload="auto"></audio>
+    <audio id="winSound" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
